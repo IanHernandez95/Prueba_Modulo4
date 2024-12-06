@@ -24,3 +24,17 @@ El desafio debe contar con los siguientes elementos
         - Compile (si aplica)  y valide los archivos del sitio
         - Suba los archivos al bucket s3 cada vez que se haga una cambio en la rama main
         - invalide el Cache de CloudFront tras el despliege
+
+
+## Github acctions
+
+El pipeline de este github action funcion en ubuntu-latest, siendo llamada cada vez que se realiza un push a la rama principal y/o un pull request
+
+Se debe considerar tener en los secrets el AWS_ACCESS_KEY_ID y AWS_SECRET_ACCESS_KEY para el correcto funcionamiento de la acción
+
+Una vez generada la configuracion de las credenciales, el pipeline toma todos los archivos dentro de la carpeta public y los syncroniza con la informacion del bucket
+
+Para realizar la invalidacion del cache posterior al despligue se tiene que configurar el ID_DISTRIBUTION de la distribucion del bucket
+
+
+Link del Sitio web Desplegado https://d2y2a9qmkjmq35.cloudfront.net
